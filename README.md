@@ -4,7 +4,7 @@ clone.js
 JavaScript deep object cloning (with cyclic reference support)
 
 This library adds a `clone` method to global `Object` function.
-`Object.clone(sourceObject, deepCloning, clonePrototypes)`
+`Object.clone(sourceObject [, deepCloning [, clonePrototypes ]])`
 
 Requires the folowings JavaScript ES5 capabilities:
 - `Object.keys`
