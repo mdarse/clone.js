@@ -40,7 +40,20 @@ Object.clone || Object.clone = function clone(object, deepClone, clonePrototype)
             case 'String':
                 return new String('' + object);
             // special types
-            case 'Function': // TODO clone with Function.prototype.bind ?
+            case 'Function':
+                // Wrap functions because they can have object properties
+                // We loose function name here, but it is not a standard property
+                var wrap = function cloneWrap() {
+                    // We reuse original wrapped function to prevent nested wrappers
+                    (object.__wrapped__ || object).apply(this, arguments);
+                };
+                Object.defineProperty(wrap, '__wrapped__', {
+                    value: object,
+                    writable: false,
+                    enumerable: false,
+                    configurable: false
+                });
+                return wrap;
             case 'Error':
                 return object; // Can't clone these
             case 'Date':
