@@ -1,0 +1,18 @@
+{
+  "name": "clone.js",
+  "main": "clone.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mdarse/clone.js",
+  "authors": [
+    "Mathieu Darse <hello@mathieudarse.fr>"
+  ],
+  "description": "JavaScript deep object cloning that rocks",
+  "keywords": [
+    "clone",
+    "cloning",
+    "deep",
+    "shallow",
+    "object"
+  ],
+  "license": "MIT"
+}
