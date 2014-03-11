@@ -12,11 +12,12 @@ Object.clone = Object.clone || function clone(object, deepClone, clonePrototype)
     return _clone(object);
 
     function _clone(object) {
+        var clone;
         if (typeof object !== 'object' || object === null) { // because typeof null => 'object'
             // immutable primitive types (string, number, boolean, undefined), function or null
             clone = object;
         } else {
-            var index = visited.indexOf(object), clone;
+            var index = visited.indexOf(object);
             if (index === -1) {
                 clone = _createInstance(object);
                 visited.push(object);
@@ -30,6 +31,8 @@ Object.clone = Object.clone || function clone(object, deepClone, clonePrototype)
     }
 
     function _createInstance(object) {
+        // Prevent warning for primitive constructor use
+        /* jshint -W053 */
         var className = Object.prototype.toString.call(object).slice(8, -1);
         switch (className) {
             // primitive wrapper types
