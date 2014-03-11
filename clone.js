@@ -1,12 +1,12 @@
 /**
  * Clone.js
- * 
+ *
  * Full source at http://github.com/mdarse/clone.js
  * Copyright (c) 2013 Mathieu Darse <hello@mathieudarse.fr>
  *
  * Clone.js may be freely distributed under the MIT license.
  */
-Object.clone || Object.clone = function clone(object, deepClone, clonePrototype) {
+Object.clone = Object.clone || function clone(object, deepClone, clonePrototype) {
     var visited = [],
         set = [];
     return _clone(object);
