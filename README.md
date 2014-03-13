@@ -3,6 +3,8 @@ clone.js
 
 JavaScript deep object cloning (with cyclic reference support)
 
+[![Code Climate](https://codeclimate.com/github/mdarse/clone.js.png)](https://codeclimate.com/github/mdarse/clone.js)
+
 This library adds a `clone` method to global `Object` function.
 `Object.clone(sourceObject [, deepCloning [, clonePrototypes ]])`
 
